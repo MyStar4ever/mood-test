@@ -751,9 +751,7 @@ function getSmoothColor(value, max, invert = false) {
 
     // Кнопка копирования результата
     document.getElementById("copyResultBtn").addEventListener("click",function(){
-        let text = 'Тест настроения — по вопросам
-
-';
+        let text = 'Тест настроения — по вопросам\n\n';
 
         const scales = [
             { name: 'Депрессия', key: 'dep', questions: depQuestions },
@@ -767,25 +765,20 @@ function getSmoothColor(value, max, invert = false) {
 
         for (const scaleInfo of scales) {
             let sum = 0;
-            text += `=== ${scaleInfo.name} ===
-`;
+            text += `=== ${scaleInfo.name} ===\n`;
             scaleInfo.questions.forEach(q => {
                 const val = form.querySelector(`input[name="${q}"]:checked`);
                 const v = val ? parseInt(val.value, 10) : 0;
                 sum += v;
-                text += `• ${questionLabels[q] || q}: ${v}
-`;
+                text += `• ${questionLabels[q] || q}: ${v}\n`;
             });
 
             const description = getDescription(scaleInfo.key, sum);
-            text += `Сумма: ${sum}/${scaleInfo.questions.length * 4}
-`;
+            text += `Сумма: ${sum}/${scaleInfo.questions.length * 4}\n`;
             if (description) {
-                text += `Результат: ${description}
-`;
+                text += `Результат: ${description}\n`;
             }
-            text += `
-`;
+            text += `\n`;
         }
 
         text += `📅 Дата и время прохождения: ${new Date().toLocaleDateString('ru-RU',{year:'numeric', month:'long', day:'numeric', hour:'2-digit', minute:'2-digit'})}`;
