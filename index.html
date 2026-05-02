@@ -6,10 +6,6 @@
     <title>Опрос настроения</title>
     <style>
         :root {
-
-
-
-
             /* Общие цвета */
             --bg-color: #1a1a2e;
             --container-bg-color: #2a2a3e;
@@ -20,10 +16,6 @@
             --button-hover-color: #357ABD;
             --selected-bg-color: #4a5a6e;
             
-          
-          
-          
-          
             /* Цвета границ для разных секций */
             --border-color-dep: #D13E4E; /* Депрессия */
             --border-color-sui: #c678dd; /* Суицидальные мысли */
@@ -32,12 +24,6 @@
             --border-color-happy: #50C878; /* Счастье (изумрудно-зеленый) */
             --border-color-phys: #9370DB; /* Физические симптомы (средний фиолетовый) */
             --border-color-rel: #40E0D0; /* Отношения (бирюзовый) */
-
-
-
-
-
-
         }
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -46,7 +32,6 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
-          
         }
         .container {
             max-width: 700px;
@@ -72,24 +57,17 @@
             font-size: 1.5rem;
             margin-top: 0;
             margin-bottom: 38px;
-             text-shadow:
-        0 1px 2px rgba(0, 0, 0, 0.3), /* лёгкая тень для объёма */
-        0 0 5px rgba(255, 255, 255, 0.05);
-             line-height: 1.4;  
-           margin-top: 10px;
-          text-shadow:
-        0 1px 2px rgba(0, 0, 0, 0.3),    /* лёгкая тень для объёма */
-        0 0 5px rgba(255, 255, 255, 0.05), /* лёгкое свечение */
-        0 0 20px rgba(0, 0, 0, 0.6);    /* <-- Большая мягкая тень */
-          
-          
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 0 5px rgba(255, 255, 255, 0.05);
+            line-height: 1.4;  
+            margin-top: 10px;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 0 5px rgba(255, 255, 255, 0.05), 0 0 20px rgba(0, 0, 0, 0.6);
         }
         .instructions {
-            text-align: left;           /* выравниваем текст по левому краю */
-            max-width: 600px;           /* ограничиваем ширину для удобочитаемости */
-            margin: 0 auto 15px auto;   /* центрируем блок по горизонтали, отступ снизу */
-            line-height: 1.5;           /* делаем текст «воздушным» */
-            font-size: 1rem;            /* нормальный размер */
+            text-align: left;
+            max-width: 600px;
+            margin: 0 auto 15px auto;
+            line-height: 1.5;
+            font-size: 1rem;
             opacity: 0.85;   
         }
         .question-section {
@@ -98,74 +76,40 @@
             padding: 20px;
             margin-top: 40px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
-          
         }
-
-
-
-
-
-              /* Стиль для блока с описанием результата */
         .score-description {
             font-size: 1rem;
-            margin-top: 15px; /* Отступ сверху */
+            margin-top: 15px;
             padding: 10px;
             background-color: #4a5a6e;
             border-radius: 8px;
             border-left: 3px solid var(--button-color);
             color: var(--text-color);
-
-
-
-
-
-
-
-
         }
-     
-        /* Привязка цветов границ к секциям через data-category атрибут */
         .question-section[data-category="depression"] { border: 2px solid var(--border-color-dep); }
-      .question-section[data-category="suicidal"] { 
-    border: 2px solid var(--border-color-sui); 
-}
-
+        .question-section[data-category="suicidal"] { border: 2px solid var(--border-color-sui); }
         .question-section[data-category="anxiety"] { border: 2px solid var(--border-color-anx); }
         .question-section[data-category="anger"] { border: 2px solid var(--border-color-anger); }
-      .question-section[data-category="sui"] { border: 2px solid var(--border-color-sui); }
+        .question-section[data-category="sui"] { border: 2px solid var(--border-color-sui); }
         .question-section[data-category="happiness"] { border: 2px solid var(--border-color-happy); }
         .question-section[data-category="physical"] { border: 2px solid var(--border-color-phys); }
         .question-section[data-category="relationships"] { border: 2px solid var(--border-color-rel); }
-
-        .question-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+        .question-list { list-style: none; padding: 0; margin: 0; }
         .question-item {
             margin-bottom: 20px;
             padding-bottom: 15px;
             border-bottom: 1px solid #4a5a6e;
-          
         }
-        .question-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
+        .question-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        .question-text {
+            font-weight: 600;
+            margin-bottom: 12px;
+            display: block;
+            color: #e8e8e8;
+            font-size: 1.1rem;
+            line-height: 1.4;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.7), 0 0 4px rgba(0,0,0,0.3);      
         }
-       .question-text {
-    font-weight: 600;                  /* чуть жирнее, чтобы выделялся */
-    margin-bottom: 12px;
-    display: block;
-    color: #e8e8e8;                    /* светлый текст на тёмном фоне */
-    font-size: 1.1rem;
-    line-height: 1.4;                  /* чуть больше пространства между строк */
-    text-shadow: 
-        0 1px 2px rgba(0,0,0,0.7),    /* мягкая тень для глубины */
-        0 0 4px rgba(0,0,0,0.3);      /* лёгкий ореол для читаемости */
-         
-}
-      
         .radio-options {
             display: flex;
             justify-content: space-around;
@@ -187,55 +131,10 @@
             text-align: center;
             position: relative;
         }
-        .radio-options label:hover {
-            background-color: #5d6d7e;
-            transform: translateY(-2px);
-        }
-        .radio-options input[type="radio"] {
-            position: absolute;
-            opacity: 0;
-            cursor: pointer;
-        }
-        .radio-options label span {
-            font-size: 1.1rem;
-            font-weight: bold;
-            color: var(--text-color);
-            transition: color 0.3s, transform 0.2s;
-          
-        }
-      
-      
-      
-      
-      
-        /* Стили для выбранной кнопки */
-        .radio-options input[type="radio"] {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-}
-
-
-.radio-options label span {
-  font-size: 1.1rem;
-}
-
-
-.radio-options label:has(input[type="radio"]:checked) {
-  background-color: #4a90e2; /* синий фон */
-  transform: scale(1.05);
-}
-
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
+        .radio-options label:hover { background-color: #5d6d7e; transform: translateY(-2px); }
+        .radio-options input[type="radio"] { position: absolute; opacity: 0; cursor: pointer; }
+        .radio-options label span { font-size: 1.1rem; font-weight: bold; color: var(--text-color); transition: color 0.3s, transform 0.2s; }
+        .radio-options label:has(input[type="radio"]:checked) { background-color: #4a90e2; transform: scale(1.05); }
         button {
             margin-top: 30px;
             padding: 15px 25px;
@@ -251,10 +150,7 @@
             transition: background-color 0.3s ease, transform 0.2s;
             box-shadow: 0 5px 15px rgba(74, 144, 226, 0.3);
         }
-        button:hover {
-            background-color: var(--button-hover-color);
-            transform: translateY(-2px);
-        }
+        button:hover { background-color: var(--button-hover-color); transform: translateY(-2px); }
         .result {
             display: none;
             margin-top: 30px;
@@ -263,118 +159,25 @@
             border-radius: 10px;
             border: 2px solid var(--button-color);
         }
-        .score-section-result {
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin: 10px 0;
-            padding: 5px;
-            background-color: #4a5a6e;
-            border-radius: 5px;
-        }
-        .score {
-            color: var(--button-color);
-            float: right;
-        }
-        #result-datetime {
-            font-size: 0.9rem;
-            color: #ccc;
-            text-align: right;
-            margin-top: 15px;
-        
-      
-      
-      
-      
-      
-        }
-        /* Адаптивные стили */
+        #result-datetime { font-size: 0.9rem; color: #ccc; text-align: right; margin-top: 15px; }
         @media (max-width: 768px) {
-            .container {
-                margin: 10px;
-                padding: 20px;
-            }
-            .question-section {
-                margin-top: 20px;
-                padding: 15px;
-            }
-            .radio-options {
-                justify-content: space-between;
-                gap: 5px;
-            }
-            .radio-options label {
-                width: 18%; /* Оптимизированный размер для 5 кнопок в ряд */
-                font-size: 0.8rem;
-                padding: 10px 5px;
-            }
+            .container { margin: 10px; padding: 20px; }
+            .question-section { margin-top: 20px; padding: 15px; }
+            .radio-options { justify-content: space-between; gap: 5px; }
+            .radio-options label { width: 18%; font-size: 0.8rem; padding: 10px 5px; }
             h1 { font-size: 1.8rem; }
             h2 { font-size: 1.3rem; }
-            .radio-options label span {
-                font-size: 0.9rem;
-            }
-
-
-      
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          .scale-container {
-    width: 100%;
-    height: 25px;
-    background: #eee;
-    border-radius: 12px;
-    margin: 10px 0;
-    overflow: hidden;
-}
-
-.scale-bar {
-    height: 100%;
-    width: 0;
-    border-radius: 12px;
-    transition: width 0.5s, background-color 0.5s;
-    text-align: right;
-    padding-right: 5px;
-    color: #fff;
-    font-weight: bold;
-    line-height: 25px;
-}
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
+            .radio-options label span { font-size: 0.9rem; }
+        }
     </style>
 </head>
 <body>
-
-  
-  
-  
 <div class="container">
     <h1>Тест настроения</h1>
     <p class="instructions">
       Инструкция.<br><br>
        Этот короткий тест — способ быстро понять, как ты чувствуешь себя сейчас: спокойно ли внутри, хватает ли энергии, не давит ли тревога, депрессия и как ты себя чувствуешь в отношениях.
-
- <br><br>
+        <br><br>
         Прохождение теста займёт примерно 3 минуты.  
         <br><br>
         Оцени, как чувтсвуешь себя по шкале,  
@@ -383,10 +186,6 @@
     </p>
 
     <form id="mood-survey">
-    
-      
-      
-      
         <!-- Группа 1: Депрессия (9 вопросов) -->
         <div class="question-section" data-category="depression">
             <h2>Насколько подавленным (депрессивным) ты себя чувствуете прямо сейчас?</h2>
@@ -403,50 +202,42 @@
             </ul>
         </div>
       
-      
-      <!-- Группа 2: Суицидальные мысли (3 вопроса) -->
-<!-- Группа 2: Суицидальные мысли (3 вопроса) -->
-<div class="question-section" data-category="sui">
-    <h2>Насколько у тебя сейчас присутствуют суицидальные мысли?</h2>
-    <ul class="question-list">
-        <li class="question-item">
-            <span class="question-text">1. Бывает ли желание просто исчезнуть или умереть?
-</span>
-            <div class="radio-options">
-                <label><input type="radio" name="q_sui_1" value="0" required><span>0</span></label>
-                <label><input type="radio" name="q_sui_1" value="1"><span>1</span></label>
-                <label><input type="radio" name="q_sui_1" value="2"><span>2</span></label>
-                <label><input type="radio" name="q_sui_1" value="3"><span>3</span></label>
-                <label><input type="radio" name="q_sui_1" value="4"><span>4</span></label>
-            </div>
-        </li>
-
-        <li class="question-item">
-            <span class="question-text">2. Возникают ли мысли о смерти или самоубийстве?</span>
-            <div class="radio-options">
-                <label><input type="radio" name="q_sui_2" value="0" required><span>0</span></label>
-                <label><input type="radio" name="q_sui_2" value="1"><span>1</span></label>
-                <label><input type="radio" name="q_sui_2" value="2"><span>2</span></label>
-                <label><input type="radio" name="q_sui_2" value="3"><span>3</span></label>
-                <label><input type="radio" name="q_sui_2" value="4"><span>4</span></label>
-            </div>
-        </li>
-
-        <li class="question-item">
-            <span class="question-text">3. Были ли у тебя попытки или конкретные планы покончить с собой?</span>
-            <div class="radio-options">
-                <label><input type="radio" name="q_sui_3" value="0" required><span>0</span></label>
-                <label><input type="radio" name="q_sui_3" value="1"><span>1</span></label>
-                <label><input type="radio" name="q_sui_3" value="2"><span>2</span></label>
-                <label><input type="radio" name="q_sui_3" value="3"><span>3</span></label>
-                <label><input type="radio" name="q_sui_3" value="4"><span>4</span></label>
-            </div>
-        </li>
-    </ul>
-</div>
-
-
-      
+        <!-- Группа 2: Суицидальные мысли (3 вопроса) -->
+        <div class="question-section" data-category="sui">
+            <h2>Насколько у тебя сейчас присутствуют суицидальные мысли?</h2>
+            <ul class="question-list">
+                <li class="question-item">
+                    <span class="question-text">1. Бывает ли желание просто исчезнуть или умереть?</span>
+                    <div class="radio-options">
+                        <label><input type="radio" name="q_sui_1" value="0" required><span>0</span></label>
+                        <label><input type="radio" name="q_sui_1" value="1"><span>1</span></label>
+                        <label><input type="radio" name="q_sui_1" value="2"><span>2</span></label>
+                        <label><input type="radio" name="q_sui_1" value="3"><span>3</span></label>
+                        <label><input type="radio" name="q_sui_1" value="4"><span>4</span></label>
+                    </div>
+                </li>
+                <li class="question-item">
+                    <span class="question-text">2. Возникают ли мысли о смерти или самоубийстве?</span>
+                    <div class="radio-options">
+                        <label><input type="radio" name="q_sui_2" value="0" required><span>0</span></label>
+                        <label><input type="radio" name="q_sui_2" value="1"><span>1</span></label>
+                        <label><input type="radio" name="q_sui_2" value="2"><span>2</span></label>
+                        <label><input type="radio" name="q_sui_2" value="3"><span>3</span></label>
+                        <label><input type="radio" name="q_sui_2" value="4"><span>4</span></label>
+                    </div>
+                </li>
+                <li class="question-item">
+                    <span class="question-text">3. Были ли у тебя попытки или конкретные планы покончить с собой?</span>
+                    <div class="radio-options">
+                        <label><input type="radio" name="q_sui_3" value="0" required><span>0</span></label>
+                        <label><input type="radio" name="q_sui_3" value="1"><span>1</span></label>
+                        <label><input type="radio" name="q_sui_3" value="2"><span>2</span></label>
+                        <label><input type="radio" name="q_sui_3" value="3"><span>3</span></label>
+                        <label><input type="radio" name="q_sui_3" value="4"><span>4</span></label>
+                    </div>
+                </li>
+            </ul>
+        </div>
 
         <!-- Группа 3: Тревога (5 вопросов) -->
         <div class="question-section" data-category="anxiety">
@@ -460,8 +251,6 @@
             </ul>
         </div>
 
-      
-      
         <!-- Группа 4: Злость (5 вопросов) -->
         <div class="question-section" data-category="anger">
             <h2>Насколько ты сейчас злишься?</h2>
@@ -474,9 +263,6 @@
             </ul>
         </div>
 
-      
-      
-      
         <!-- Группа 5: Счастье (10 вопросов) -->
         <div class="question-section" data-category="happiness">
             <h2>Насколько ты сейчас счастлив?</h2>
@@ -494,10 +280,7 @@
             </ul>
         </div>
 
-      
-      
-      
-        <!-- Группа 6: Физические симптомы (5 вопросов) -->
+        <!-- Группа 6: Физические симптомы (8 вопросов) -->
         <div class="question-section" data-category="physical">
             <h2>Есть ли у тебя сейчас физические симптомы?</h2>
             <ul class="question-list">
@@ -506,133 +289,50 @@
                 <li class="question-item"><span class="question-text">3. Изменение аппетита - стал есть больше или наоборот почти не ешь?</span><div class="radio-options"><label><input type="radio" name="q_phys_3" value="0" required><span>0</span></label><label><input type="radio" name="q_phys_3" value="1"><span>1</span></label><label><input type="radio" name="q_phys_3" value="2"><span>2</span></label><label><input type="radio" name="q_phys_3" value="3"><span>3</span></label><label><input type="radio" name="q_phys_3" value="4"><span>4</span></label></div></li>
                 <li class="question-item"><span class="question-text">4. Пропал интерес к сексу или стало меньше желания?</span><div class="radio-options"><label><input type="radio" name="q_phys_4" value="0" required><span>0</span></label><label><input type="radio" name="q_phys_4" value="1"><span>1</span></label><label><input type="radio" name="q_phys_4" value="2"><span>2</span></label><label><input type="radio" name="q_phys_4" value="3"><span>3</span></label><label><input type="radio" name="q_phys_4" value="4"><span>4</span></label></div></li>
                 <li class="question-item"><span class="question-text">5. Проблемы с концентрацией - сложно сосредоточиться, читать, думать, всё расплывается?</span><div class="radio-options"><label><input type="radio" name="q_phys_5" value="0" required><span>0</span></label><label><input type="radio" name="q_phys_5" value="1"><span>1</span></label><label><input type="radio" name="q_phys_5" value="2"><span>2</span></label><label><input type="radio" name="q_phys_5" value="3"><span>3</span></label><label><input type="radio" name="q_phys_5" value="4"><span>4</span></label></div></li>
-             <li class="question-item">
-  <span class="question-text">6. Учащённое сердцебиение, потливость, дрожь, головокружение, тошнота, нехватка воздуха?</span>
-  <div class="radio-options">
-    <label><input type="radio" name="q_phys_6" value="0" required><span>0</span></label>
-    <label><input type="radio" name="q_phys_6" value="1"><span>1</span></label>
-    <label><input type="radio" name="q_phys_6" value="2"><span>2</span></label>
-    <label><input type="radio" name="q_phys_6" value="3"><span>3</span></label>
-    <label><input type="radio" name="q_phys_6" value="4"><span>4</span></label>
-  </div>
-</li>
-
-<li class="question-item">
-  <span class="question-text">7. Часто беспокоишься о своём здоровье, видишь у себя «симптомы»?</span>
-  <div class="radio-options">
-    <label><input type="radio" name="q_phys_7" value="0" required><span>0</span></label>
-    <label><input type="radio" name="q_phys_7" value="1"><span>1</span></label>
-    <label><input type="radio" name="q_phys_7" value="2"><span>2</span></label>
-    <label><input type="radio" name="q_phys_7" value="3"><span>3</span></label>
-    <label><input type="radio" name="q_phys_7" value="4"><span>4</span></label>
-  </div>
-</li>
-
-<li class="question-item">
-  <span class="question-text">8. Чувство, будто ты сам или мир вокруг тебя нереален?</span>
-  <div class="radio-options">
-    <label><input type="radio" name="q_phys_8" value="0" required><span>0</span></label>
-    <label><input type="radio" name="q_phys_8" value="1"><span>1</span></label>
-    <label><input type="radio" name="q_phys_8" value="2"><span>2</span></label>
-    <label><input type="radio" name="q_phys_8" value="3"><span>3</span></label>
-    <label><input type="radio" name="q_phys_8" value="4"><span>4</span></label>
-  </div>
-</li>
-
+                <li class="question-item"><span class="question-text">6. Учащённое сердцебиение, потливость, дрожь, головокружение, тошнота, нехватка воздуха?</span><div class="radio-options"><label><input type="radio" name="q_phys_6" value="0" required><span>0</span></label><label><input type="radio" name="q_phys_6" value="1"><span>1</span></label><label><input type="radio" name="q_phys_6" value="2"><span>2</span></label><label><input type="radio" name="q_phys_6" value="3"><span>3</span></label><label><input type="radio" name="q_phys_6" value="4"><span>4</span></label></div></li>
+                <li class="question-item"><span class="question-text">7. Часто беспокоишься о своём здоровье, видишь у себя «симптомы»?</span><div class="radio-options"><label><input type="radio" name="q_phys_7" value="0" required><span>0</span></label><label><input type="radio" name="q_phys_7" value="1"><span>1</span></label><label><input type="radio" name="q_phys_7" value="2"><span>2</span></label><label><input type="radio" name="q_phys_7" value="3"><span>3</span></label><label><input type="radio" name="q_phys_7" value="4"><span>4</span></label></div></li>
+                <li class="question-item"><span class="question-text">8. Чувство, будто ты сам или мир вокруг тебя нереален?</span><div class="radio-options"><label><input type="radio" name="q_phys_8" value="0" required><span>0</span></label><label><input type="radio" name="q_phys_8" value="1"><span>1</span></label><label><input type="radio" name="q_phys_8" value="2"><span>2</span></label><label><input type="radio" name="q_phys_8" value="3"><span>3</span></label><label><input type="radio" name="q_phys_8" value="4"><span>4</span></label></div></li>
             </ul>
         </div>
 
-      
-      
-      
-        <!-- Группа 7: Отношения (5 вопросов) -->
+        <!-- Группа 7: Отношения (9 вопросов) -->
         <div class="question-section" data-category="relationships">
             <h2>Насколько ты сейчас доволен своими отношениями?</h2>
-          
             <ul class="question-list">
                 <li class="question-item"><span class="question-text">1. Между вами есть открытость, искреннее общение, поддержка и понимание?</span><div class="radio-options"><label><input type="radio" name="q_rel_1" value="0" required><span>0</span></label><label><input type="radio" name="q_rel_1" value="1"><span>1</span></label><label><input type="radio" name="q_rel_1" value="2"><span>2</span></label><label><input type="radio" name="q_rel_1" value="3"><span>3</span></label><label><input type="radio" name="q_rel_1" value="4"><span>4</span></label></div></li>
                 <li class="question-item"><span class="question-text">2. Чувствуешь себя одиноким, непонятым, трудно выражать свои чувства?</span><div class="radio-options"><label><input type="radio" name="q_rel_2" value="0" required><span>0</span></label><label><input type="radio" name="q_rel_2" value="1"><span>1</span></label><label><input type="radio" name="q_rel_2" value="2"><span>2</span></label><label><input type="radio" name="q_rel_2" value="3"><span>3</span></label><label><input type="radio" name="q_rel_2" value="4"><span>4</span></label></div></li>
                 <li class="question-item"><span class="question-text">3. Как вы справляетесь с конфликтами и спорами, находите общий язык?</span><div class="radio-options"><label><input type="radio" name="q_rel_3" value="0" required><span>0</span></label><label><input type="radio" name="q_rel_3" value="1"><span>1</span></label><label><input type="radio" name="q_rel_3" value="2"><span>2</span></label><label><input type="radio" name="q_rel_3" value="3"><span>3</span></label><label><input type="radio" name="q_rel_3" value="4"><span>4</span></label></div></li>
                 <li class="question-item"><span class="question-text">4. В ваших отношениях есть доброжелательность, привязанность, забота?</span><div class="radio-options"><label><input type="radio" name="q_rel_4" value="0" required><span>0</span></label><label><input type="radio" name="q_rel_4" value="1"><span>1</span></label><label><input type="radio" name="q_rel_4" value="2"><span>2</span></label><label><input type="radio" name="q_rel_4" value="3"><span>3</span></label><label><input type="radio" name="q_rel_4" value="4"><span>4</span></label></div></li>
-                <li class="question-item"><span class="question-text">5. Есть интимность, доверие, чувство близости — или, наоборот, закрытость и дистанция? Чувство обиды или недопонимания в общении</span><div class="radio-options"><label><input type="radio" name="q_rel_5" value="0" required><span>0</span></label><label><input type="radio" name="q_rel_5" value="1"><span>1</span></label><label><input type="radio" name="q_rel_5" value="2"><span>2</span></label><label><input type="radio" name="q_rel_5" value="3"><span>3</span></label><label><input type="radio" name="q_rel_5" value="4"><span>4</span></label></div></li>
-       <li class="question-item">
-      <span class="question-text">6. Насколько ты доволен своей ролью в этих отношениях?</span>
-      <div class="radio-options">
-        <label><input type="radio" name="q_rel_6" value="0" required><span>0</span></label>
-        <label><input type="radio" name="q_rel_6" value="1"><span>1</span></label>
-        <label><input type="radio" name="q_rel_6" value="2"><span>2</span></label>
-        <label><input type="radio" name="q_rel_6" value="3"><span>3</span></label>
-        <label><input type="radio" name="q_rel_6" value="4"><span>4</span></label>
-      </div>
-    </li>
-
-    <li class="question-item">
-      <span class="question-text">7. Насколько доволен ролью другого человека?</span>
-      <div class="radio-options">
-        <label><input type="radio" name="q_rel_7" value="0" required><span>0</span></label>
-        <label><input type="radio" name="q_rel_7" value="1"><span>1</span></label>
-        <label><input type="radio" name="q_rel_7" value="2"><span>2</span></label>
-        <label><input type="radio" name="q_rel_7" value="3"><span>3</span></label>
-        <label><input type="radio" name="q_rel_7" value="4"><span>4</span></label>
-      </div>
-    </li>
-
-    <li class="question-item">
-      <span class="question-text">8. В целом, насколько доволен вашими отношениями?
-</span>
-      <div class="radio-options">
-        <label><input type="radio" name="q_rel_8" value="0" required><span>0</span></label>
-        <label><input type="radio" name="q_rel_8" value="1"><span>1</span></label>
-        <label><input type="radio" name="q_rel_8" value="2"><span>2</span></label>
-        <label><input type="radio" name="q_rel_8" value="3"><span>3</span></label>
-        <label><input type="radio" name="q_rel_8" value="4"><span>4</span></label>
-      </div>
-    </li>
-
-    <li class="question-item">
-      <span class="question-text">9. Насколько ты удовлетворён интимной стороной ваших отношений?</span>
-      <div class="radio-options">
-        <label><input type="radio" name="q_rel_9" value="0" required><span>0</span></label>
-        <label><input type="radio" name="q_rel_9" value="1"><span>1</span></label>
-        <label><input type="radio" name="q_rel_9" value="2"><span>2</span></label>
-        <label><input type="radio" name="q_rel_9" value="3"><span>3</span></label>
-        <label><input type="radio" name="q_rel_9" value="4"><span>4</span></label>
-      </div>
-    </li>
-
-  </ul>
-</div>
-        
-            
-      <div id="results" style="margin-top:20px;"></div>
-
-      
+                <li class="question-item"><span class="question-text">5. Есть интимность, доверие, чувство близости — или, наоборот, закрытость и дистанция?</span><div class="radio-options"><label><input type="radio" name="q_rel_5" value="0" required><span>0</span></label><label><input type="radio" name="q_rel_5" value="1"><span>1</span></label><label><input type="radio" name="q_rel_5" value="2"><span>2</span></label><label><input type="radio" name="q_rel_5" value="3"><span>3</span></label><label><input type="radio" name="q_rel_5" value="4"><span>4</span></label></div></li>
+                <li class="question-item"><span class="question-text">6. Насколько ты доволен своей ролью в этих отношениях?</span><div class="radio-options"><label><input type="radio" name="q_rel_6" value="0" required><span>0</span></label><label><input type="radio" name="q_rel_6" value="1"><span>1</span></label><label><input type="radio" name="q_rel_6" value="2"><span>2</span></label><label><input type="radio" name="q_rel_6" value="3"><span>3</span></label><label><input type="radio" name="q_rel_6" value="4"><span>4</span></label></div></li>
+                <li class="question-item"><span class="question-text">7. Насколько доволен ролью другого человека?</span><div class="radio-options"><label><input type="radio" name="q_rel_7" value="0" required><span>0</span></label><label><input type="radio" name="q_rel_7" value="1"><span>1</span></label><label><input type="radio" name="q_rel_7" value="2"><span>2</span></label><label><input type="radio" name="q_rel_7" value="3"><span>3</span></label><label><input type="radio" name="q_rel_7" value="4"><span>4</span></label></div></li>
+                <li class="question-item"><span class="question-text">8. В целом, насколько доволен вашими отношениями?</span><div class="radio-options"><label><input type="radio" name="q_rel_8" value="0" required><span>0</span></label><label><input type="radio" name="q_rel_8" value="1"><span>1</span></label><label><input type="radio" name="q_rel_8" value="2"><span>2</span></label><label><input type="radio" name="q_rel_8" value="3"><span>3</span></label><label><input type="radio" name="q_rel_8" value="4"><span>4</span></label></div></li>
+                <li class="question-item"><span class="question-text">9. Насколько ты удовлетворён интимной стороной ваших отношений?</span><div class="radio-options"><label><input type="radio" name="q_rel_9" value="0" required><span>0</span></label><label><input type="radio" name="q_rel_9" value="1"><span>1</span></label><label><input type="radio" name="q_rel_9" value="2"><span>2</span></label><label><input type="radio" name="q_rel_9" value="3"><span>3</span></label><label><input type="radio" name="q_rel_9" value="4"><span>4</span></label></div></li>
+            </ul>
+        </div>
+        <div id="results" style="margin-top:20px;"></div>
     </form>
     <button type="submit" form="mood-survey">Подсчитать результаты</button>
-    <div id="result" class="result" style="display:none; margin-top:20px;">
-    <h2>Результаты</h2>
-    <div id="result-content"></div>
-    <div id="result-datetime"></div>
-</div>
+    <div id="result" class="result">
+        <h2>Результаты</h2>
+        <div id="result-content"></div>
+        <div id="result-datetime"></div>
+    </div>
+    <div style="display:flex; justify-content:center; margin-top:10px; margin-bottom:40px;">
+        <button id="copyResultBtn">📋 Скопировать результат</button>
+    </div>
+    <p id="copyHint" style="text-align:center; font-size:0.9rem; color:#999; margin-top:8px;">
+        После прохождения теста нажми и вставь в заметки или Телеграм
+    </p>
 </div>
 
-  
-  
-  
-  
-  
 <script>
-  
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('mood-survey');
     const resultContainer = document.getElementById('result');
     const resultContentDiv = document.getElementById('result-content');
     const copyHint = document.getElementById('copyHint');
 
-  
-  
-  
-    // Вопросы по шкалам
     const depQuestions = ['q_dep_1','q_dep_2','q_dep_3','q_dep_4','q_dep_5','q_dep_6','q_dep_7','q_dep_8','q_dep_9'];
     const suiQuestions = ['q_sui_1','q_sui_2','q_sui_3'];
     const anxQuestions = ['q_anx_1','q_anx_2','q_anx_3','q_anx_4','q_anx_5'];
@@ -641,251 +341,137 @@ document.addEventListener('DOMContentLoaded', function() {
     const physQuestions = ['q_phys_1','q_phys_2','q_phys_3','q_phys_4','q_phys_5','q_phys_6','q_phys_7','q_phys_8'];
     const relQuestions = ['q_rel_1','q_rel_2','q_rel_3','q_rel_4','q_rel_5','q_rel_6','q_rel_7','q_rel_8','q_rel_9'];
 
-  
-  
-  
-  
     const questionLabels = {
-        q_dep_1: "Грусть",
-        q_dep_2: "Безнадежность",
-        q_dep_3: "Вина",
-        q_dep_4: "Низкая самооценка",
-        q_dep_5: "Апатия",
-        q_dep_6: "Потеря удовольствия",
-        q_dep_7: "Одиночество",
-        q_dep_8: "Нерешительность",
-        q_dep_9: "Не нравлюсь себе",
-        q_sui_1: "Мысли о смерти 1",
-        q_sui_2: "Мысли о смерти 2",
-        q_sui_3: "Мысли о смерти 3",
-        q_anx_1: "Тревога",
-        q_anx_2: "Паника (панические атаки)",
-        q_anx_3: "Чувство опасности",
-        q_anx_4: "Навязчивые мысли",
-        q_anx_5: "Напряжение",
-        q_anger_1: "Недовольство",
-        q_anger_2: "Раздражение(обвинение)",
-        q_anger_3: "Обида",
-        q_anger_4: "Несправедливость",
-        q_anger_5: "Гнев",
-        q_happy_1: "Радость (я счастлив)",
-        q_happy_2: "Ценю себя (или высокая самооценка)",
-        q_happy_3: "Нравлюсь себе",
-        q_happy_4: "Близость с людьми",
-        q_happy_5: "Я достигаю",
-        q_happy_6: "Энергия (мотивированный или продуктивный)",
-        q_happy_7: "Спокойствие",
-        q_happy_8: "Духовность",
-        q_happy_9: "Оптимизм",
-        q_happy_10: "Доволен своей жизнью",
-        q_phys_1: "Усталость",
-        q_phys_2: "Проблемы со сном",
-        q_phys_3: "Изменение аппетита",
-        q_phys_4: "Либидо",
-        q_phys_5: "Концентрация",
-        q_phys_6: "Учащённое сердцебиение",
-        q_phys_7: "Беспокойство о здоровье",
-        q_phys_8: "Дереализация",
-        q_rel_1: "Открытость искренность",
-        q_rel_2: "Одиночество",
-        q_rel_3: "Разрешение конфликтов",
-        q_rel_4: "Забота",
-        q_rel_5: "Близость",
-        q_rel_6: "Моя роль",
-        q_rel_7: "Роль близкого",
-        q_rel_8: "Доброжелательность",
-        q_rel_9: "Интим"
-    
-  };
+        q_dep_1: "Грусть", q_dep_2: "Безнадежность", q_dep_3: "Вина", q_dep_4: "Низкая самооценка", q_dep_5: "Апатия",
+        q_dep_6: "Потеря удовольствия", q_dep_7: "Одиночество", q_dep_8: "Нерешительность", q_dep_9: "Не нравлюсь себе",
+        q_sui_1: "Мысли о смерти 1", q_sui_2: "Мысли о смерти 2", q_sui_3: "Мысли о смерти 3",
+        q_anx_1: "Тревога", q_anx_2: "Паника", q_anx_3: "Чувство опасности", q_anx_4: "Навязчивые мысли", q_anx_5: "Напряжение",
+        q_anger_1: "Недовольство", q_anger_2: "Раздражение", q_anger_3: "Обида", q_anger_4: "Несправедливость", q_anger_5: "Гнев",
+        q_happy_1: "Радость", q_happy_2: "Ценю себя", q_happy_3: "Нравлюсь себе", q_happy_4: "Близость", q_happy_5: "Я достигаю",
+        q_happy_6: "Энергия", q_happy_7: "Спокойствие", q_happy_8: "Духовность", q_happy_9: "Оптимизм", q_happy_10: "Доволен жизнью",
+        q_phys_1: "Усталость", q_phys_2: "Проблемы со сном", q_phys_3: "Аппетит", q_phys_4: "Либидо", q_phys_5: "Концентрация",
+        q_phys_6: "Сердцебиение", q_phys_7: "Здоровье", q_phys_8: "Дереализация",
+        q_rel_1: "Искренность", q_rel_2: "Одиночество", q_rel_3: "Конфликты", q_rel_4: "Забота", q_rel_5: "Близость",
+        q_rel_6: "Моя роль", q_rel_7: "Роль близкого", q_rel_8: "Доброжелательность", q_rel_9: "Интим"
+    };
 
-    
-  
-  
-    // Описания для шкал с 5 уровнями детализации
-const descriptions = {
-    dep: [
-        { max: 4, text: 'Очень низкий уровень подавленности. Настроение ровное, энергия в норме.' },
-        { max: 8, text: 'Небольшая подавленность. Иногда проскакивает грусть, но вы быстро восстанавливаетесь.' },
-        { max: 14, text: 'Умеренная подавленность. Есть усталость, потеря интереса, фон настроения снижен.' },
-        { max: 20, text: 'Выраженная подавленность. Тяжело радоваться, хочется уединиться.' },
-        { max: Infinity, text: 'Очень высокий уровень подавленности. Возможно, требуется поддержка или отдых.' }
-    ],
+    const descriptions = {
+        dep: [
+            { max: 4, text: 'Очень низкий уровень подавленности. Настроение ровное.' },
+            { max: 8, text: 'Небольшая подавленность.' },
+            { max: 14, text: 'Умеренная подавленность.' },
+            { max: 20, text: 'Выраженная подавленность.' },
+            { max: Infinity, text: 'Очень высокая подавленность.' }
+        ],
+        sui: [
+            { max: 2, text: 'Мысли о смерти не беспокоят.' },
+            { max: 5, text: 'Иногда появляются тяжёлые мысли. Рекомендуется консультация.' },
+            { max: Infinity, text: 'Критический уровень. Срочно поговорите со специалистом.' }
+        ],
+        anx: [
+            { max: 4, text: 'Очень низкий уровень тревожности. Спокойны.' },
+            { max: 8, text: 'Пограничная тревожность.' },
+            { max: 14, text: 'Умеренная тревожность.' },
+            { max: 20, text: 'Высокая тревожность.' },
+            { max: Infinity, text: 'Очень высокая тревожность.' }
+        ],
+        anger: [
+            { max: 4, text: 'Низкий уровень раздражения.' },
+            { max: 8, text: 'Небольшое раздражение.' },
+            { max: 14, text: 'Умеренный уровень злости.' },
+            { max: 20, text: 'Высокий уровень злости.' },
+            { max: Infinity, text: 'Очень высокий уровень агрессии.' }
+        ],
+        happy: [
+            { max: 10, text: 'Очень низкий уровень радости.' },
+            { max: 20, text: 'Низкий уровень счастья.' },
+            { max: 30, text: 'Средний уровень счастья.' },
+            { max: 38, text: 'Высокий уровень счастья.' },
+            { max: Infinity, text: 'Очень высокий уровень счастья!' }
+        ],
+        phys: [
+            { max: 4, text: 'Почти нет физических симптомов.' },
+            { max: 8, text: 'Небольшое физическое напряжение.' },
+            { max: 14, text: 'Умеренные физические симптомы.' },
+            { max: 20, text: 'Выраженные физические симптомы.' },
+            { max: Infinity, text: 'Очень сильные физические проявления стресса.' }
+        ],
+        rel: [
+            { max: 4, text: 'Очень низкое качество отношений.' },
+            { max: 8, text: 'Низкий уровень удовлетворённости.' },
+            { max: 14, text: 'Средний уровень отношений.' },
+            { max: 20, text: 'Хороший уровень отношений.' },
+            { max: Infinity, text: 'Очень высокий уровень гармонии.' }
+        ]
+    };
 
-  
-  sui: [
-  {max: 2, text: 'Мысли о смерти не беспокоят. Всё под контролем.'},
-  {max: 5, text: 'Иногда появляются тяжёлые мысли. Важно не оставаться с ними один на один. Эти мысли обычно не опасны, если вы не строите конкретных планов действий. Однако будет мудрым решением проконсультироваться со специалистом в области психического здоровья, если у вас возникают какие-либо суицидальные фантазии или импульсы или если чувства депрессии и бессилия длятся более недели или двух. Ваша жизнь ценна, и не стоит играть в русскую рулетку с подобными мыслями.'},
-  {max: Infinity, text: 'Частые или навязчивые мысли о смерти. Это сигнал — нужно поговорить со специалистом. Важно не оставаться с ними один на один.'}
-],
-  
-  
-    anx: [
-        { max: 4, text: 'Очень низкий уровень тревожности. Спокойны и уверены в себе.' },
-        { max: 8, text: 'Пограничная тревожность. Иногда волнуетесь, но держите контроль.' },
-        { max: 14, text: 'Умеренная тревожность. Периодически беспокойство мешает расслабиться.' },
-        { max: 20, text: 'Высокая тревожность. Часто внутреннее напряжение, трудно успокоиться.' },
-        { max: Infinity, text: 'Очень высокая тревожность. Возможны панические или телесные реакции на стресс.' }
-    ],
+    const maxScores = {
+        dep: 36, sui: 12, anx: 20, anger: 20, happy: 40, phys: 32, rel: 36
+    };
 
-    anger: [
-        { max: 4, text: 'Очень низкий уровень раздражения. Сохраняете спокойствие даже в сложных ситуациях.' },
-        { max: 8, text: 'Небольшое раздражение. Иногда что-то задевает, но не выходит из-под контроля.' },
-        { max: 14, text: 'Умеренный уровень злости. Бывают вспышки, но вы осознаёте и сдерживаете их.' },
-        { max: 20, text: 'Высокий уровень злости. Эмоции часто выходят наружу, сложно удержаться.' },
-        { max: Infinity, text: 'Очень высокий уровень агрессии. Возможно, стоит отдохнуть или поговорить об этом.' }
-    ],
-
-    happy: [
-        { max: 10, text: 'Очень низкий уровень радости. Мало удовольствия, трудно найти вдохновение.' },
-        { max: 20, text: 'Низкий уровень счастья. Есть хорошие моменты, но эмоциональный фон слабый.' },
-        { max: 30, text: 'Средний уровень счастья. Иногда радуетесь, иногда устаете — баланс есть.' },
-        { max: 38, text: 'Высокий уровень счастья. Часто чувствуете вдохновение, уверенность и удовольствие от жизни.' },
-        { max: Infinity, text: 'Очень высокий уровень счастья! Настроение отличное, вы полны энергии и позитива.' }
-    ],
-
-    phys: [
-        { max: 4, text: 'Почти нет физических симптомов. Тело расслаблено и спокойно.' },
-        { max: 8, text: 'Небольшое физическое напряжение. Иногда чувствуете усталость или зажимы.' },
-        { max: 14, text: 'Умеренные физические симптомы. Тело реагирует на стресс, но в целом вы справляетесь.' },
-        { max: 20, text: 'Выраженные физические симптомы. Часто чувствуете усталость, напряжение или боль.' },
-        { max: Infinity, text: 'Очень сильные физические проявления стресса. Нужен отдых и забота о теле.' }
-    ],
-
-    rel: [
-        { max: 4, text: 'Очень низкое качество отношений. Есть отдалённость или конфликты.' },
-        { max: 8, text: 'Низкий уровень удовлетворённости. Иногда чувствуете нехватку поддержки или доверия.' },
-        { max: 14, text: 'Средний уровень отношений. Есть и близость, и недопонимание.' },
-        { max: 20, text: 'Хороший уровень отношений. В целом чувствуете тепло, открытость и поддержку.' },
-        { max: Infinity, text: 'Очень высокий уровень гармонии в отношениях. Доверие, близость и взаимность сильны.' }
-    ]
-};
-
-
-  
-  
-  
-  
-    // Функция выбора описания
     function getDescription(scale, score) {
         const rules = descriptions[scale];
+        if(!rules) return '';
         for (let rule of rules) if(score <= rule.max) return rule.text;
         return '';
     }
 
-    // Функция подсчёта баллов
- function calculateScore(names) {
-    let score = 0;
-    names.forEach(name => {
-        const selected = form.querySelector(`input[name="${name}"]:checked`);
-        if(selected) {
-            console.log(name, 'выбрано', selected.value);  // <-- добавили проверку
-            score += parseInt(selected.value,10);
-        } else {
-            console.log(name, 'ничего не выбрано');       // <-- если пусто
-        }
-    });
-    return score;
-}
+    function calculateScore(names) {
+        let score = 0;
+        names.forEach(name => {
+            const selected = form.querySelector(`input[name="${name}"]:checked`);
+            if(selected) score += parseInt(selected.value, 10);
+        });
+        return score;
+    }
 
+    function getSmoothColor(value, max, invert = false) {
+        const p = invert ? 1 - value / max : value / max;
+        const gradient = [
+            { pct: 0.0,  color: [33, 150, 243] },
+            { pct: 0.15, color: [76, 175, 80] },
+            { pct: 0.3,  color: [139, 195, 74] },
+            { pct: 0.45, color: [255, 235, 59] },
+            { pct: 0.6,  color: [255, 193, 7] },
+            { pct: 0.75, color: [255, 152, 0] },
+            { pct: 0.9,  color: [244, 67, 54] },
+            { pct: 1.0,  color: [156, 39, 176] }
+        ];
+        let i = 1;
+        while (i < gradient.length - 1 && p > gradient[i].pct) i++;
+        const lower = gradient[i - 1], upper = gradient[i];
+        const rangePct = (p - lower.pct) / (upper.pct - lower.pct);
+        const r = Math.round(lower.color[0] + (upper.color[0] - lower.color[0]) * rangePct);
+        const g = Math.round(lower.color[1] + (upper.color[1] - lower.color[1]) * rangePct);
+        const b = Math.round(lower.color[2] + (upper.color[2] - lower.color[2]) * rangePct);
+        return `rgb(${r},${g},${b})`;
+    }
 
-   // Функция плавного цвета с расширенным градиентом
-function getSmoothColor(value, max, invert = false) {
-    const p = invert ? 1 - value / max : value / max;
-    const gradient = [
-        { pct: 0.0,  color: [33, 150, 243] },   // синий (#2196F3)
-        { pct: 0.15, color: [76, 175, 80] },    // зелёный (#4CAF50)
-        { pct: 0.3,  color: [139, 195, 74] },   // салатовый (#8BC34A)
-        { pct: 0.45, color: [255, 235, 59] },   // жёлтый (#FFEB3B)
-        { pct: 0.6,  color: [255, 193, 7] },    // янтарный (#FFC107)
-        { pct: 0.75, color: [255, 152, 0] },    // оранжевый (#FF9800)
-        { pct: 0.9,  color: [244, 67, 54] },    // красный (#F44336)
-        { pct: 1.0,  color: [156, 39, 176] }    // фиолетовый (#9C27B0)
-    ];
-
-    let i = 1;
-    while (i < gradient.length - 1 && p > gradient[i].pct) i++;
-    const lower = gradient[i - 1], upper = gradient[i];
-    const rangePct = (p - lower.pct) / (upper.pct - lower.pct);
-    const r = Math.round(lower.color[0] + (upper.color[0] - lower.color[0]) * rangePct);
-    const g = Math.round(lower.color[1] + (upper.color[1] - lower.color[1]) * rangePct);
-    const b = Math.round(lower.color[2] + (upper.color[2] - lower.color[2]) * rangePct);
-    return `rgb(${r},${g},${b})`;
-}
-  
-  
-  
-    const maxScores = {
-    dep: 36,
-    sui: 12,
-    anx: 20,
-    anger: 20,
-    happy: 40,
-    phys: 32,
-    rel: 36,
-    sui: 16 // 👈 если, например, 4 вопроса по 0–4 балла
-};
-
-  
-  
-  
-  
-    // Обработчик submit
     form.addEventListener('submit', function(event) {
         event.preventDefault();
         resultContentDiv.innerHTML='';
-
-      const scores = {
-    dep: calculateScore(depQuestions),
-    sui: calculateScore(suiQuestions), // 👈 добавили сюда
-    anx: calculateScore(anxQuestions),
-    anger: calculateScore(angerQuestions),
-    happy: calculateScore(happyQuestions),
-    phys: calculateScore(physQuestions),
-    rel: calculateScore(relQuestions)
-};
-
+        const scores = {
+            dep: calculateScore(depQuestions), sui: calculateScore(suiQuestions),
+            anx: calculateScore(anxQuestions), anger: calculateScore(angerQuestions),
+            happy: calculateScore(happyQuestions), phys: calculateScore(physQuestions),
+            rel: calculateScore(relQuestions)
+        };
+        const labelsMap = {
+            dep: 'ДЕПРЕССИЯ', sui: 'Мысли о смерти', anx: 'Тревожность',
+            anger: 'Раздражение / злость', happy: 'Счастье', phys: 'Физическое состояние', rel: 'Отношения'
+        };
         for(let scale in scores){
             const score = scores[scale];
-            const percentage = Math.min(100, score/maxScores[scale]*100);
-const circleLeft = Math.max(0, Math.min(100, percentage));
-
+            const percentage = Math.min(100, (score/maxScores[scale])*100);
             const color = getSmoothColor(score, maxScores[scale], scale==='happy'||scale==='rel');
             const text = getDescription(scale, score);
-
             const block=document.createElement('div');
             block.style.marginBottom='25px';
             block.innerHTML=`
-               <div style="font-weight:bold; margin-bottom:5px;">
-    ${{
-              
-        dep: 'ДЕПРЕССИЯ',
-        sui: 'Мысли о смерти',
-        anx: 'Тревожность',
-        anger: 'Раздражение / злость',
-        happy: 'Счастье и удовлетворённость',
-        phys: 'Физическое состояние',
-        rel: 'Отношения с людьми'
-    }
-            [scale] || scale.toUpperCase()}
-</div>
+                <div style="font-weight:bold; margin-bottom:5px;">${labelsMap[scale]}</div>
                 <div style="position:relative; height:20px; border-radius:12px; background:#ddd; overflow:hidden; margin-bottom:5px;">
                     <div style="height:100%; width:${percentage}%; background-color:${color}; border-radius:12px;"></div>
-                    <div style="
-                        position:absolute;
-                        top:50%;
-                        left:${percentage}%;
-                        transform: translate(-50%,-50%);
-                        width:28px;
-                        height:28px;
-                        border-radius:50%;
-                        background-color:${color};
-                        display:flex;
-                        align-items:center;
-                        justify-content:center;
-                        font-weight:bold;
-                        font-size:14px;
-                        color:white;
-                    ">
+                    <div style="position:absolute; top:50%; left:${percentage}%; transform: translate(-50%,-50%); width:28px; height:28px; border-radius:50%; background-color:${color}; display:flex; align-items:center; justify-content:center; font-weight:bold; font-size:14px; color:white;">
                         ${score}
                     </div>
                 </div>
@@ -893,18 +479,13 @@ const circleLeft = Math.max(0, Math.min(100, percentage));
             `;
             resultContentDiv.appendChild(block);
         }
-
         const now=new Date();
-        document.getElementById('result-datetime').textContent=`Дата и время прохождения: ${now.toLocaleDateString('ru-RU',{year:'numeric', month:'long', day:'numeric', hour:'2-digit', minute:'2-digit'})}`;
+        document.getElementById('result-datetime').textContent=`Дата: ${now.toLocaleString()}`;
         resultContainer.style.display='block';
         resultContainer.scrollIntoView({behavior:'smooth'});
     });
 
-  
-  
-  
-  
-    // Кнопка автозаполнения
+    /* Кнопка автозаполнения (закомментирована)
     const submitBtn = document.querySelector('button[type="submit"]');
     const autoBtn = document.createElement('button');
     autoBtn.textContent='🔧 Заполнить тест автоматически';
@@ -922,30 +503,23 @@ const circleLeft = Math.max(0, Math.min(100, percentage));
         }
         submitBtn.click();
     });
+    */
 
-  
-  
-  
-  
-    // Кнопка копирования результата
     document.getElementById("copyResultBtn").addEventListener("click",function(){
-        let text = 'Тест настроения — по вопросам\n\n';
-       
-const groups = {
-    Депрессия: depQuestions,
-    'Мысли о смертибезысходности': suiQuestions,
-    Тревога: anxQuestions,
-    Злость: angerQuestions,
-    Счастье: happyQuestions,
-    'Физические симптомы': physQuestions,
-    Отношения: relQuestions
-};
-
-
-        const labels = Object.assign({}, ...[depQuestions, suiQuestions, anxQuestions, angerQuestions, happyQuestions, physQuestions, relQuestions]
-    .map(arr => Object.fromEntries(arr.map(k => [k, k]))));
-
-
+        let text = '📊 РЕЗУЛЬТАТЫ ТЕСТА НАСТРОЕНИЯ\n\n';
+        const groups = {
+            'Депрессия': depQuestions,
+            'Мысли о смерти': suiQuestions,
+            'Тревога': anxQuestions,
+            'Злость': angerQuestions,
+            'Счастье': happyQuestions,
+            'Физические симптомы': physQuestions,
+            'Отношения': relQuestions
+        };
+        const scaleMapping = {
+            'Депрессия': 'dep', 'Мысли о смерти': 'sui', 'Тревога': 'anx',
+            'Злость': 'anger', 'Счастье': 'happy', 'Физические симптомы': 'phys', 'Отношения': 'rel'
+        };
         for(const [groupName, questions] of Object.entries(groups)){
             let sum=0;
             text+=`=== ${groupName} ===\n`;
@@ -955,95 +529,21 @@ const groups = {
                 sum+=v;
                 text+=`• ${questionLabels[q]}: ${v}\n`;
             });
-            text+=`Сумма: ${sum}/${questions.length*4}\n\n`;
+            const key = scaleMapping[groupName];
+            const desc = getDescription(key, sum);
+            text+=`Сумма: ${sum}/${maxScores[key]}\n📝 Описание: ${desc}\n\n`;
         }
-        text+=`📅 Дата и время прохождения: ${new Date().toLocaleDateString('ru-RU',{year:'numeric', month:'long', day:'numeric', hour:'2-digit', minute:'2-digit'})}`;
-
+        text+=`📅 Дата: ${new Date().toLocaleString()}`;
         const temp=document.createElement("textarea");
         temp.value=text;
         document.body.appendChild(temp);
         temp.select();
         document.execCommand("copy");
         document.body.removeChild(temp);
-
-        copyHint.innerText="✅ Скопировано! Вставь в заметки или отправь в Телеграм.";
-        copyHint.style.color="#50C878";
-        setTimeout(()=>{copyHint.innerText="После прохождения теста нажми и вставь в заметки или Телеграм"; copyHint.style.color="#999";},4000);
+        copyHint.innerText="✅ Скопировано с описанием!";
+        setTimeout(()=>{copyHint.innerText="После прохождения теста нажми и вставь в заметки или Телеграм";},4000);
     });
 });
-
-
-
-
-
-  
-  
-  
-  
- 
-
- 
-  
-  
-  
-  
-  
-  
-  
-
 </script>
-  
-  
-  
-  
-  
-  
-  
-<style>
-#copyResultBtn {
-  width: 100%;
-  max-width: 400px;        /* ПК — не растягиваем */
-  background:#4b7bec;
-  color:white;
-  border:none;
-  padding:10px 20px;
-  border-radius:12px;
-  cursor:pointer;
-  font-size:15px;
-  transition:0.2s;
-}
-
-/* На телефоне делаем кнопку уже */
-@media (max-width: 480px) {
-  #copyResultBtn {
-    max-width: 250px;  /* уже кнопка */
-    padding:8px 16px;
-    font-size:14px;
-  }
-}
-</style>
-
-<div style="display:flex; justify-content:center; margin-top:10px; margin-bottom:40px;">
-  <button id="copyResultBtn">📋 Скопировать результат</button>
-</div>
-
-
-  
-<!-- Подсказка -->
-<p id="copyHint" style="text-align:center; font-size:0.9rem; color:#999; margin-top:8px;">
-После прохождения теста нажми и вставь в заметки или Телеграм
-</p>
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-
 </body>
 </html>
