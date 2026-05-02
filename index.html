@@ -6,6 +6,10 @@
     <title>Опрос настроения</title>
     <style>
         :root {
+
+
+
+
             /* Общие цвета */
             --bg-color: #1a1a2e;
             --container-bg-color: #2a2a3e;
@@ -15,7 +19,11 @@
             --button-color: #4A90E2;
             --button-hover-color: #357ABD;
             --selected-bg-color: #4a5a6e;
-
+            
+          
+          
+          
+          
             /* Цвета границ для разных секций */
             --border-color-dep: #D13E4E; /* Депрессия */
             --border-color-sui: #c678dd; /* Суицидальные мысли */
@@ -24,6 +32,12 @@
             --border-color-happy: #50C878; /* Счастье (изумрудно-зеленый) */
             --border-color-phys: #9370DB; /* Физические симптомы (средний фиолетовый) */
             --border-color-rel: #40E0D0; /* Отношения (бирюзовый) */
+
+
+
+
+
+
         }
         body {
             font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
@@ -32,6 +46,7 @@
             margin: 0;
             padding: 0;
             line-height: 1.6;
+          
         }
         .container {
             max-width: 700px;
@@ -60,12 +75,14 @@
              text-shadow:
         0 1px 2px rgba(0, 0, 0, 0.3), /* лёгкая тень для объёма */
         0 0 5px rgba(255, 255, 255, 0.05);
-             line-height: 1.4;
+             line-height: 1.4;  
            margin-top: 10px;
           text-shadow:
         0 1px 2px rgba(0, 0, 0, 0.3),    /* лёгкая тень для объёма */
         0 0 5px rgba(255, 255, 255, 0.05), /* лёгкое свечение */
         0 0 20px rgba(0, 0, 0, 0.6);    /* <-- Большая мягкая тень */
+          
+          
         }
         .instructions {
             text-align: left;           /* выравниваем текст по левому краю */
@@ -73,7 +90,7 @@
             margin: 0 auto 15px auto;   /* центрируем блок по горизонтали, отступ снизу */
             line-height: 1.5;           /* делаем текст «воздушным» */
             font-size: 1rem;            /* нормальный размер */
-            opacity: 0.85;
+            opacity: 0.85;   
         }
         .question-section {
             background-color: var(--section-bg-color);
@@ -81,8 +98,14 @@
             padding: 20px;
             margin-top: 40px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+          
         }
-        /* Стиль для блока с описанием результата */
+
+
+
+
+
+              /* Стиль для блока с описанием результата */
         .score-description {
             font-size: 1rem;
             margin-top: 15px; /* Отступ сверху */
@@ -91,12 +114,22 @@
             border-radius: 8px;
             border-left: 3px solid var(--button-color);
             color: var(--text-color);
+
+
+
+
+
+
+
+
         }
+     
         /* Привязка цветов границ к секциям через data-category атрибут */
         .question-section[data-category="depression"] { border: 2px solid var(--border-color-dep); }
-      .question-section[data-category="suicidal"] {
-    border: 2px solid var(--border-color-sui);
+      .question-section[data-category="suicidal"] { 
+    border: 2px solid var(--border-color-sui); 
 }
+
         .question-section[data-category="anxiety"] { border: 2px solid var(--border-color-anx); }
         .question-section[data-category="anger"] { border: 2px solid var(--border-color-anger); }
       .question-section[data-category="sui"] { border: 2px solid var(--border-color-sui); }
@@ -113,6 +146,7 @@
             margin-bottom: 20px;
             padding-bottom: 15px;
             border-bottom: 1px solid #4a5a6e;
+          
         }
         .question-item:last-child {
             border-bottom: none;
@@ -126,10 +160,12 @@
     color: #e8e8e8;                    /* светлый текст на тёмном фоне */
     font-size: 1.1rem;
     line-height: 1.4;                  /* чуть больше пространства между строк */
-    text-shadow:
+    text-shadow: 
         0 1px 2px rgba(0,0,0,0.7),    /* мягкая тень для глубины */
         0 0 4px rgba(0,0,0,0.3);      /* лёгкий ореол для читаемости */
+         
 }
+      
         .radio-options {
             display: flex;
             justify-content: space-around;
@@ -165,7 +201,13 @@
             font-weight: bold;
             color: var(--text-color);
             transition: color 0.3s, transform 0.2s;
+          
         }
+      
+      
+      
+      
+      
         /* Стили для выбранной кнопки */
         .radio-options input[type="radio"] {
   position: absolute;
@@ -173,14 +215,27 @@
   cursor: pointer;
 }
 
+
 .radio-options label span {
   font-size: 1.1rem;
 }
+
 
 .radio-options label:has(input[type="radio"]:checked) {
   background-color: #4a90e2; /* синий фон */
   transform: scale(1.05);
 }
+
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
         button {
             margin-top: 30px;
             padding: 15px 25px;
@@ -225,6 +280,12 @@
             color: #ccc;
             text-align: right;
             margin-top: 15px;
+        
+      
+      
+      
+      
+      
         }
         /* Адаптивные стили */
         @media (max-width: 768px) {
@@ -250,6 +311,20 @@
             .radio-options label span {
                 font-size: 0.9rem;
             }
+
+
+      
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
           .scale-container {
     width: 100%;
     height: 25px;
@@ -258,6 +333,7 @@
     margin: 10px 0;
     overflow: hidden;
 }
+
 .scale-bar {
     height: 100%;
     width: 0;
@@ -269,24 +345,48 @@
     font-weight: bold;
     line-height: 25px;
 }
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
     </style>
 </head>
 <body>
 
+  
+  
+  
 <div class="container">
     <h1>Тест настроения</h1>
     <p class="instructions">
       Инструкция.<br><br>
        Этот короткий тест — способ быстро понять, как ты чувствуешь себя сейчас: спокойно ли внутри, хватает ли энергии, не давит ли тревога, депрессия и как ты себя чувствуешь в отношениях.
+
  <br><br>
-        Прохождение теста займёт примерно 3 минуты.
+        Прохождение теста займёт примерно 3 минуты.  
         <br><br>
-        Оцени, как чувтсвуешь себя по шкале,
+        Оцени, как чувтсвуешь себя по шкале,  
         <strong>где:</strong><br>
         0 — совсем нет, 1 — немного, 2 — умеренно, 3 — сильно, 4 — очень сильно.
     </p>
 
     <form id="mood-survey">
+    
+      
+      
+      
         <!-- Группа 1: Депрессия (9 вопросов) -->
         <div class="question-section" data-category="depression">
             <h2>Насколько подавленным (депрессивным) ты себя чувствуете прямо сейчас?</h2>
@@ -302,7 +402,10 @@
                 <li class="question-item"><span class="question-text">9. Кажется, что стал хуже выглядеть, не нравится своя внешность?</span><div class="radio-options"><label><input type="radio" name="q_dep_9" value="0" required><span>0</span></label><label><input type="radio" name="q_dep_9" value="1"><span>1</span></label><label><input type="radio" name="q_dep_9" value="2"><span>2</span></label><label><input type="radio" name="q_dep_9" value="3"><span>3</span></label><label><input type="radio" name="q_dep_9" value="4"><span>4</span></label></div></li>
             </ul>
         </div>
+      
+      
       <!-- Группа 2: Суицидальные мысли (3 вопроса) -->
+<!-- Группа 2: Суицидальные мысли (3 вопроса) -->
 <div class="question-section" data-category="sui">
     <h2>Насколько у тебя сейчас присутствуют суицидальные мысли?</h2>
     <ul class="question-list">
@@ -342,6 +445,9 @@
     </ul>
 </div>
 
+
+      
+
         <!-- Группа 3: Тревога (5 вопросов) -->
         <div class="question-section" data-category="anxiety">
             <h2>Насколько ты сейчас тревожишься или напряжен?</h2>
@@ -354,6 +460,8 @@
             </ul>
         </div>
 
+      
+      
         <!-- Группа 4: Злость (5 вопросов) -->
         <div class="question-section" data-category="anger">
             <h2>Насколько ты сейчас злишься?</h2>
@@ -366,6 +474,9 @@
             </ul>
         </div>
 
+      
+      
+      
         <!-- Группа 5: Счастье (10 вопросов) -->
         <div class="question-section" data-category="happiness">
             <h2>Насколько ты сейчас счастлив?</h2>
@@ -383,6 +494,9 @@
             </ul>
         </div>
 
+      
+      
+      
         <!-- Группа 6: Физические симптомы (5 вопросов) -->
         <div class="question-section" data-category="physical">
             <h2>Есть ли у тебя сейчас физические симптомы?</h2>
@@ -402,6 +516,7 @@
     <label><input type="radio" name="q_phys_6" value="4"><span>4</span></label>
   </div>
 </li>
+
 <li class="question-item">
   <span class="question-text">7. Часто беспокоишься о своём здоровье, видишь у себя «симптомы»?</span>
   <div class="radio-options">
@@ -412,6 +527,7 @@
     <label><input type="radio" name="q_phys_7" value="4"><span>4</span></label>
   </div>
 </li>
+
 <li class="question-item">
   <span class="question-text">8. Чувство, будто ты сам или мир вокруг тебя нереален?</span>
   <div class="radio-options">
@@ -422,12 +538,17 @@
     <label><input type="radio" name="q_phys_8" value="4"><span>4</span></label>
   </div>
 </li>
+
             </ul>
         </div>
 
+      
+      
+      
         <!-- Группа 7: Отношения (5 вопросов) -->
         <div class="question-section" data-category="relationships">
             <h2>Насколько ты сейчас доволен своими отношениями?</h2>
+          
             <ul class="question-list">
                 <li class="question-item"><span class="question-text">1. Между вами есть открытость, искреннее общение, поддержка и понимание?</span><div class="radio-options"><label><input type="radio" name="q_rel_1" value="0" required><span>0</span></label><label><input type="radio" name="q_rel_1" value="1"><span>1</span></label><label><input type="radio" name="q_rel_1" value="2"><span>2</span></label><label><input type="radio" name="q_rel_1" value="3"><span>3</span></label><label><input type="radio" name="q_rel_1" value="4"><span>4</span></label></div></li>
                 <li class="question-item"><span class="question-text">2. Чувствуешь себя одиноким, непонятым, трудно выражать свои чувства?</span><div class="radio-options"><label><input type="radio" name="q_rel_2" value="0" required><span>0</span></label><label><input type="radio" name="q_rel_2" value="1"><span>1</span></label><label><input type="radio" name="q_rel_2" value="2"><span>2</span></label><label><input type="radio" name="q_rel_2" value="3"><span>3</span></label><label><input type="radio" name="q_rel_2" value="4"><span>4</span></label></div></li>
@@ -444,6 +565,7 @@
         <label><input type="radio" name="q_rel_6" value="4"><span>4</span></label>
       </div>
     </li>
+
     <li class="question-item">
       <span class="question-text">7. Насколько доволен ролью другого человека?</span>
       <div class="radio-options">
@@ -454,6 +576,7 @@
         <label><input type="radio" name="q_rel_7" value="4"><span>4</span></label>
       </div>
     </li>
+
     <li class="question-item">
       <span class="question-text">8. В целом, насколько доволен вашими отношениями?
 </span>
@@ -465,6 +588,7 @@
         <label><input type="radio" name="q_rel_8" value="4"><span>4</span></label>
       </div>
     </li>
+
     <li class="question-item">
       <span class="question-text">9. Насколько ты удовлетворён интимной стороной ваших отношений?</span>
       <div class="radio-options">
@@ -475,10 +599,14 @@
         <label><input type="radio" name="q_rel_9" value="4"><span>4</span></label>
       </div>
     </li>
+
   </ul>
 </div>
-
+        
+            
       <div id="results" style="margin-top:20px;"></div>
+
+      
     </form>
     <button type="submit" form="mood-survey">Подсчитать результаты</button>
     <div id="result" class="result" style="display:none; margin-top:20px;">
@@ -488,13 +616,22 @@
 </div>
 </div>
 
+  
+  
+  
+  
+  
 <script>
+  
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('mood-survey');
     const resultContainer = document.getElementById('result');
     const resultContentDiv = document.getElementById('result-content');
     const copyHint = document.getElementById('copyHint');
 
+  
+  
+  
     // Вопросы по шкалам
     const depQuestions = ['q_dep_1','q_dep_2','q_dep_3','q_dep_4','q_dep_5','q_dep_6','q_dep_7','q_dep_8','q_dep_9'];
     const suiQuestions = ['q_sui_1','q_sui_2','q_sui_3'];
@@ -504,6 +641,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const physQuestions = ['q_phys_1','q_phys_2','q_phys_3','q_phys_4','q_phys_5','q_phys_6','q_phys_7','q_phys_8'];
     const relQuestions = ['q_rel_1','q_rel_2','q_rel_3','q_rel_4','q_rel_5','q_rel_6','q_rel_7','q_rel_8','q_rel_9'];
 
+  
+  
+  
+  
     const questionLabels = {
         q_dep_1: "Грусть",
         q_dep_2: "Безнадежность",
@@ -554,8 +695,12 @@ document.addEventListener('DOMContentLoaded', function() {
         q_rel_7: "Роль близкого",
         q_rel_8: "Доброжелательность",
         q_rel_9: "Интим"
-    };
+    
+  };
 
+    
+  
+  
     // Описания для шкал с 5 уровнями детализации
 const descriptions = {
     dep: [
@@ -565,11 +710,15 @@ const descriptions = {
         { max: 20, text: 'Выраженная подавленность. Тяжело радоваться, хочется уединиться.' },
         { max: Infinity, text: 'Очень высокий уровень подавленности. Возможно, требуется поддержка или отдых.' }
     ],
+
+  
   sui: [
   {max: 2, text: 'Мысли о смерти не беспокоят. Всё под контролем.'},
   {max: 5, text: 'Иногда появляются тяжёлые мысли. Важно не оставаться с ними один на один. Эти мысли обычно не опасны, если вы не строите конкретных планов действий. Однако будет мудрым решением проконсультироваться со специалистом в области психического здоровья, если у вас возникают какие-либо суицидальные фантазии или импульсы или если чувства депрессии и бессилия длятся более недели или двух. Ваша жизнь ценна, и не стоит играть в русскую рулетку с подобными мыслями.'},
   {max: Infinity, text: 'Частые или навязчивые мысли о смерти. Это сигнал — нужно поговорить со специалистом. Важно не оставаться с ними один на один.'}
 ],
+  
+  
     anx: [
         { max: 4, text: 'Очень низкий уровень тревожности. Спокойны и уверены в себе.' },
         { max: 8, text: 'Пограничная тревожность. Иногда волнуетесь, но держите контроль.' },
@@ -577,6 +726,7 @@ const descriptions = {
         { max: 20, text: 'Высокая тревожность. Часто внутреннее напряжение, трудно успокоиться.' },
         { max: Infinity, text: 'Очень высокая тревожность. Возможны панические или телесные реакции на стресс.' }
     ],
+
     anger: [
         { max: 4, text: 'Очень низкий уровень раздражения. Сохраняете спокойствие даже в сложных ситуациях.' },
         { max: 8, text: 'Небольшое раздражение. Иногда что-то задевает, но не выходит из-под контроля.' },
@@ -584,6 +734,7 @@ const descriptions = {
         { max: 20, text: 'Высокий уровень злости. Эмоции часто выходят наружу, сложно удержаться.' },
         { max: Infinity, text: 'Очень высокий уровень агрессии. Возможно, стоит отдохнуть или поговорить об этом.' }
     ],
+
     happy: [
         { max: 10, text: 'Очень низкий уровень радости. Мало удовольствия, трудно найти вдохновение.' },
         { max: 20, text: 'Низкий уровень счастья. Есть хорошие моменты, но эмоциональный фон слабый.' },
@@ -591,6 +742,7 @@ const descriptions = {
         { max: 38, text: 'Высокий уровень счастья. Часто чувствуете вдохновение, уверенность и удовольствие от жизни.' },
         { max: Infinity, text: 'Очень высокий уровень счастья! Настроение отличное, вы полны энергии и позитива.' }
     ],
+
     phys: [
         { max: 4, text: 'Почти нет физических симптомов. Тело расслаблено и спокойно.' },
         { max: 8, text: 'Небольшое физическое напряжение. Иногда чувствуете усталость или зажимы.' },
@@ -598,6 +750,7 @@ const descriptions = {
         { max: 20, text: 'Выраженные физические симптомы. Часто чувствуете усталость, напряжение или боль.' },
         { max: Infinity, text: 'Очень сильные физические проявления стресса. Нужен отдых и забота о теле.' }
     ],
+
     rel: [
         { max: 4, text: 'Очень низкое качество отношений. Есть отдалённость или конфликты.' },
         { max: 8, text: 'Низкий уровень удовлетворённости. Иногда чувствуете нехватку поддержки или доверия.' },
@@ -607,6 +760,11 @@ const descriptions = {
     ]
 };
 
+
+  
+  
+  
+  
     // Функция выбора описания
     function getDescription(scale, score) {
         const rules = descriptions[scale];
@@ -620,11 +778,15 @@ const descriptions = {
     names.forEach(name => {
         const selected = form.querySelector(`input[name="${name}"]:checked`);
         if(selected) {
+            console.log(name, 'выбрано', selected.value);  // <-- добавили проверку
             score += parseInt(selected.value,10);
+        } else {
+            console.log(name, 'ничего не выбрано');       // <-- если пусто
         }
     });
     return score;
 }
+
 
    // Функция плавного цвета с расширенным градиентом
 function getSmoothColor(value, max, invert = false) {
@@ -649,35 +811,43 @@ function getSmoothColor(value, max, invert = false) {
     const b = Math.round(lower.color[2] + (upper.color[2] - lower.color[2]) * rangePct);
     return `rgb(${r},${g},${b})`;
 }
-
+  
+  
+  
     const maxScores = {
-        dep: 36,
-        sui: 12,
-        anx: 20,
-        anger: 20,
-        happy: 40,
-        phys: 32,
-        rel: 36
-    };
+    dep: 36,
+    sui: 12,
+    anx: 20,
+    anger: 20,
+    happy: 40,
+    phys: 32,
+    rel: 36
+};
 
+  
+  
+  
+  
     // Обработчик submit
     form.addEventListener('submit', function(event) {
         event.preventDefault();
         resultContentDiv.innerHTML='';
 
       const scores = {
-        dep: calculateScore(depQuestions),
-        sui: calculateScore(suiQuestions),
-        anx: calculateScore(anxQuestions),
-        anger: calculateScore(angerQuestions),
-        happy: calculateScore(happyQuestions),
-        phys: calculateScore(physQuestions),
-        rel: calculateScore(relQuestions)
-    };
+    dep: calculateScore(depQuestions),
+    sui: calculateScore(suiQuestions), // 👈 добавили сюда
+    anx: calculateScore(anxQuestions),
+    anger: calculateScore(angerQuestions),
+    happy: calculateScore(happyQuestions),
+    phys: calculateScore(physQuestions),
+    rel: calculateScore(relQuestions)
+};
+
         for(let scale in scores){
             const score = scores[scale];
             const percentage = Math.min(100, score/maxScores[scale]*100);
-            const circleLeft = Math.max(0, Math.min(100, percentage));
+const circleLeft = Math.max(0, Math.min(100, percentage));
+
             const color = getSmoothColor(score, maxScores[scale], scale==='happy'||scale==='rel');
             const text = getDescription(scale, score);
 
@@ -686,8 +856,9 @@ function getSmoothColor(value, max, invert = false) {
             block.innerHTML=`
                <div style="font-weight:bold; margin-bottom:5px;">
     ${{
+              
         dep: 'ДЕПРЕССИЯ',
-        sui: 'Суицидальные мысли',
+        sui: 'Мысли о смерти',
         anx: 'Тревожность',
         anger: 'Раздражение / злость',
         happy: 'Счастье и удовлетворённость',
@@ -728,6 +899,10 @@ function getSmoothColor(value, max, invert = false) {
         resultContainer.scrollIntoView({behavior:'smooth'});
     });
 
+  
+  
+  
+  
     /*
     // Кнопка автозаполнения
     const submitBtn = document.querySelector('button[type="submit"]');
@@ -749,6 +924,10 @@ function getSmoothColor(value, max, invert = false) {
     });
     */
 
+  
+  
+  
+  
     // Кнопка копирования результата
     document.getElementById("copyResultBtn").addEventListener("click",function(){
         let text = 'Тест настроения — по вопросам\n\n';
@@ -795,8 +974,34 @@ function getSmoothColor(value, max, invert = false) {
         setTimeout(()=>{copyHint.innerText="После прохождения теста нажми и вставь в заметки или Телеграм"; copyHint.style.color="#999";},4000);
     });
 });
-</script>
 
+
+
+
+
+  
+  
+  
+  
+ 
+
+ 
+  
+  
+  
+  
+  
+  
+  
+
+</script>
+  
+  
+  
+  
+  
+  
+  
 <style>
 #copyResultBtn {
   width: 100%;
@@ -810,6 +1015,7 @@ function getSmoothColor(value, max, invert = false) {
   font-size:15px;
   transition:0.2s;
 }
+
 /* На телефоне делаем кнопку уже */
 @media (max-width: 480px) {
   #copyResultBtn {
@@ -824,9 +1030,23 @@ function getSmoothColor(value, max, invert = false) {
   <button id="copyResultBtn">📋 Скопировать результат</button>
 </div>
 
+
+  
 <!-- Подсказка -->
 <p id="copyHint" style="text-align:center; font-size:0.9rem; color:#999; margin-top:8px;">
 После прохождения теста нажми и вставь в заметки или Телеграм
 </p>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
 </body>
 </html>
